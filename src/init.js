@@ -1,6 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
-  var colors = [];
+  var colors = ['palevioletred', 'red', 'yellow', 'peachpuff', 'orchid', 'seashell', 'blue', 'orange', 'black', 'dodgerblue', 'lightpink'];
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -26,13 +26,15 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-console.log(dancer.$node)
-    $('body').append(dancer.$node);
+    var randomColor = colors[Math.floor(Math.random() * 11)];
+    window.dancers.push(dancer.$node);
+    $('body').append(dancer.$node.css('border', '10px solid ' + randomColor));
   });
 
   $('.lineUp').on('click', function(event) {
+    console.log(window.dancers);
     for (var i = 0; i < window.dancers.length; i++) {
-      
+      window.dancers[i].setPosition(10, 10);
     }
   });
 });

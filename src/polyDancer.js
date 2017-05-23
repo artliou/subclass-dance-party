@@ -15,7 +15,7 @@ PolyDancer.prototype.step = function() {
 };
 
 PolyDancer.prototype.spin = function() {
-  this.$node.toggle();
+  this.$node.slideToggle();
 };
 
 // PolyDancer.prototype.lineUp = function() {
