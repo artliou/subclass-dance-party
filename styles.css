@@ -5,6 +5,7 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url('https://images.alphacoders.com/945/94523.jpg');
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -24,4 +25,8 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.oneSide, add {
+
 }
