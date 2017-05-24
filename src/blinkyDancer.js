@@ -9,11 +9,35 @@ BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
 
 BlinkyDancer.prototype.step = function() {
-  Dancer.prototype.step.call(this);
-  this.$node.toggle();
+  
   this.$node.addClass('blinkyDancer');
+  this.$node.append(bear);
+  this.$node.mouseover(function() {
+    var index = window.dancers.indexOf(this);
+    var tempArr = window.dancers.slice().splice(index, 1);
+    var shortest = Infinity;
+    var closestNode = null;
+    console.log($(this).position());
+    for (var i = 0; i < tempArr.length; i++) {
+      var cur = tempArr[i];
+      var shortest = Infinity;
+      var curDistance = Math.hypot($(this).position().top - $(tempArr[i]).position().top , $(this).position().left - $(tempArr[i]).position().left);
+      if (curDistance < shortest) {
+        shortest = curDistance;
+        closestNode = tempArr[i];
+      } 
+    }
+    console.log(closestNode);
+    $(closestNode).animate({ "left": "-=500px" }, "slow" ).animate({ "left": "+=500px" }, "slow" );
+    $(this).css('border', '10px solid red');
+  });
+  this.$node.mouseout(function() {
+    $(this).css('border', '0px solid red');
+  });
 };
 
+
+var bear = '<img src = "img/smooch.gif"</img>';
 // BlinkyDancer.prototype.lineUp = function() {
 //   Dancer.prototype.setPosition();
 // };

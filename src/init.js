@@ -26,16 +26,44 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    var randomColor = colors[Math.floor(Math.random() * 11)];
+    // var randomColor = colors[Math.floor(Math.random() * 11)];
     window.dancers.push(dancer.$node);
-    $('body').append(dancer.$node.css('border', '10px solid ' + randomColor));
+    $('body').append(dancer.$node);
   });
 
   $('.lineUp').on('click', function(event) {
     console.log(window.dancers);
     for (var i = 0; i < window.dancers.length; i++) {
-      window.dancers[i].setPosition(10, 10);
+      window.dancers[i].css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+                                                $(window).scrollTop()) + "px");
     }
   });
 });
+  
+  // $('.interact').on('click', function(event) {
+    
+    
+  // });
+  //   // var tempDancers = window.dancers;
+  //   // for (var i = 0; i < tempDancers.length; i++) {
+  //   //   for (var j = i + 1; j < tempDancers.length; j++) {
+    //     var shortestDisance = Infinity;
+    //     var curntDistance = Math.hypot(dancers[i].top - 
+    //       dancers[j].top, dancers[i].left - dancers[j].left);
+    //     console.log(currentDistance);
+    //     if (currentDistance < shortestDisance) {
+    //       shortestDisance = currentDistance;
+    //       tempDancers.length = tempDancers.length - 2;
+    //       tempDancers[i].css('border', '10px solid yellow');
+    //       tempDancers[j].css('border', '10px solid black');       
+    //       tempDancers.splice(i, 1);
+    //       tempDancers.splice(j, 1);
+    //     }
+    //     //Do something, then remove;
+    //     // tempDancers[i].css('border', '10px solid yellow');
+    //     // tempDancers[j].css('border', '10px solid black');       
+    //     // tempDancers.splice(i, 1);
+    //     // tempDancers.splice(j, 1);
+    //   }
+    // }
 

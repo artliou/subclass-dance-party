@@ -22,11 +22,72 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid yellow;
-  border-radius:10px;
+/*  border:10px solid yellow;
+*/  border-radius:10px;
   position:absolute;
 }
 
-.oneSide, add {
+/*;
+*/
 
+/*// BODY SHAKE //
+*/@keyframes bod-shake {
+  50%  { transform: translate(4px, 2px) rotateZ(6deg); }
+}
+.body {
+  animation: bod-shake .5s infinite;
+}
+
+/*// RIGHT FOOT //
+*/@keyframes right-foot-tap {
+  50%  { transform: translate(5px, 9px) rotateZ(3deg); }
+}
+.right-foot {
+  animation: right-foot-tap ease .5s infinite;
+}
+
+/*// LEFT FOOT //
+*/@keyframes left-foot-tap {
+  50%  { transform: translate(0px, -2px) rotate(-1deg); }
+}
+.left-foot {
+  animation: left-foot-tap ease .5s infinite;
+}
+
+/*// HAIR BOUNCE //
+*/@keyframes hair-bounce {
+  50%  { transform: translate(-2px, 1px) rotate(-3deg); }
+}
+.hair {
+  animation: hair-bounce ease .5s infinite;
+}
+
+/*// LEFT ARM //
+*/@keyframes left-arm-shake {
+  50%  { transform: translate(2px, 6px) rotate(3deg); }
+}
+.left-arm {
+  animation: left-arm-shake ease .5s infinite;
+}
+
+/*// RIGHT ARM //
+*/@keyframes right-arm-shake {
+  50%  { transform: translate(3px, 3px) rotate(3deg); }
+}
+.right-arm {
+  animation: right-arm-shake ease .5s infinite;
+}
+
+/*// EYE PUPIL MOVEMENT //
+*/@keyframes eye-shift {
+  50%  { transform: translate(2px, 1px); }
+}
+.pupil {
+  animation: eye-shift ease .5s infinite;
+}
+
+/*// Nothing to see here //
+*/svg {
+  width:100%;
+  height:300px;
 }
